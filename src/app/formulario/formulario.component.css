@@ -1,0 +1,27 @@
+.main-form{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+    width: 400px;
+    /* overflow-y: auto; */
+}
+.campoDuplo{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+.numero{
+   
+    
+    
+}
+.endereco{
+    
+}
+.field{
+    width: 100%;
+
+}

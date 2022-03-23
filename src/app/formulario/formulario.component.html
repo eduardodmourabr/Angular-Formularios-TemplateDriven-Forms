@@ -1,0 +1,127 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Formulário</mat-card-title>
+    </mat-card-header>
+        <mat-card-content>
+            <form 
+                action="#" 
+                id="main-form" 
+                
+            >
+            <mat-form-field 
+                appearance="fill"
+                class="field"
+            >
+                <mat-label>Nome</mat-label>
+                <input 
+                    type="text" 
+                    matInput 
+                    placeholder="Seu nome..."
+                    formControlName = 'name'
+                >
+
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="field">
+                <mat-label>Sobrenome</mat-label>
+                <input 
+                    type="text" 
+                    matInput 
+                    placeholder="Seu sobrenome..."
+                    formControlName = 'lastname'
+                >
+                
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="field">
+                <mat-label>CPF</mat-label>
+                <input 
+                    type="number" 
+                    matInput 
+                    placeholder="Digite aqui seu CPF..."
+                    formControlName = 'cpf'
+                >
+                
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="field">
+                <mat-label>Telefone</mat-label>
+                <input 
+                    type="tel" 
+                    matInput 
+                    placeholder="Digite seu número..."
+                    formControlName = 'telefone'
+                >
+                
+            </mat-form-field>
+            <div class="campoDuplo">
+                <div class="endereco">
+                    <mat-form-field class="label" appearance="fill">
+                        <mat-label>Endereço</mat-label>
+                        <input 
+                            type="text" 
+                            matInput 
+                            placeholder="Digite seu entereço..."
+                            formControlName = 'endereco'
+                        >
+                    </mat-form-field>
+                </div>
+                <div class="numero">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nº</mat-label>
+                        <input 
+                            type="number" 
+                            matInput 
+                            placeholder="Numero..."
+                            formControlName = 'numero'
+                            id="n"
+                        >
+                    </mat-form-field>
+                </div>
+            </div>
+            <mat-form-field appearance="fill" class="field">
+                <mat-label>Complemento</mat-label>
+                <input 
+                    type="text" 
+                    matInput 
+                    placeholder="complemento..."
+                    formControlName = 'complemento'
+                >
+                
+            </mat-form-field>
+          
+        
+        
+        
+        
+        
+        
+        
+                <div class="addNovoCampo">
+                    <button
+                        mat-icon-button
+                        color="warn"
+                        type="button"
+                    >
+                    <mat-icon>add</mat-icon>
+                </button>
+                <button
+                    mat-icon-button
+                    color="warn"
+                    type="button"
+                    >
+                    <mat-icon>delete</mat-icon>
+                </button>
+                </div>
+        
+            
+                <div class="form-row col">
+                    <button 
+                        mat-raised-button 
+                        type="submit" 
+                        color="primary" 
+                        class="grow"
+                  
+                    >Cadastrar</button>
+                    
+                </div>
+            </form>  
+        </mat-card-content>
+</mat-card>

@@ -1,0 +1,47 @@
+<form 
+    action="#"
+    [formGroup]="cadastroForm"
+>
+    <div class="input">
+        <label for="name">Nome:</label>
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Digite o seu nome..."
+            formControlName="nome"
+            [formControl]="meuControl"
+        >
+    </div>
+    
+    <div class="input">
+        <label for="email">E-mail:</label>
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="Digite o seu e-mail..."
+            formControlName="email"
+        >
+    </div>
+    <div class="input">
+        <label for="senha1">Senha:</label>
+        <input 
+            type="password" 
+            name="senha1" 
+            placeholder="Digite o sua senha..."
+            formControlName="senha1"
+        >
+    </div>
+    <div class="input">
+        <label for="name">Confirmar senha:</label>
+        <input 
+            type="password" 
+            name="name" 
+            placeholder="Confirme a senha..."
+            formControlName="senha2"
+        >
+    </div>
+    <h3>Adicione seus telefones</h3>
+
+   
+    
+</form>

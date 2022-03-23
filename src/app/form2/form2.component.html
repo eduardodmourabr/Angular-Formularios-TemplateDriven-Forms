@@ -1,0 +1,252 @@
+<div class="container">
+    <mat-card >
+        <mat-card-header>
+            <mat-card-title>Formulário 02</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form 
+                class="form"
+                [formGroup]="usuarioForm"
+                (submit)="submit(inputpass1.value, inputpass2.value)"
+               
+            >
+                <div class="form-row">
+                    <mat-form-field >
+                        <label></label>
+                        <input 
+                            type="text"
+                            placeholder="Digite o seu nome..."
+                            matInput
+                            
+                            #inputNome
+                            [formControl]="nome"
+                        >
+                        <mat-error>
+                            <span *ngIf="usuarioForm.controls['nome'].getError('required')" >
+                                ( Campo obrigatório )
+                            </span>
+                        </mat-error>
+                        
+                    </mat-form-field>
+                    <mat-form-field >
+                        <label></label>
+                        <input 
+                            type="text"
+                            placeholder="Digite o seu sobrenome..."
+                            matInput
+                            [formControl]="sobrenome"
+                        >
+                        <mat-error>
+                            <span *ngIf="usuarioForm.controls['sobrenome'].getError('required')" >
+                                ( Campo obrigatório )
+                            </span>
+                            
+                        </mat-error>
+                    </mat-form-field>
+                    <div class="div">
+                        <mat-form-field >
+                            <label></label>
+                            <input 
+                                type="text"
+                                placeholder="Digite seu Username..."
+                                matInput
+                                minlength="8"
+                                [formControl]="username"
+                                #inputUsername
+                            >
+                            <mat-error>
+                                <span *ngIf="usuarioForm.controls['username'].getError('required')" >
+                                    ( Campo obrigatório )
+                                </span>
+                                <span *ngIf="usuarioForm.controls['username'].getError('minlength')" >
+                                    ( mínimo 5 caracteres )
+                                </span>
+                            </mat-error>
+                            <span style="color:rgb(255, 71, 47)"
+                            *ngIf="inputUsername.value.length > 0 && inputUsername.value.length < 8">
+                                ( Poucos caracteres, insira mais {{8 - inputUsername.value.length}} )
+                        </span>
+                        </mat-form-field>
+                    </div>
+                    <div class="div">
+                        <mat-form-field >
+                            <label></label>
+                            <input 
+                                type="number"
+                                placeholder="Digite seu CPF..."
+                                matInput
+                                [formControl]="cpf"
+                                minlength="11"
+                                #inputCPF
+                            >
+                            <mat-error>
+                                <span *ngIf="usuarioForm.controls['cpf'].getError('required')" >
+                                    ( Campo obrigatório )
+                                </span>
+                                <span *ngIf="usuarioForm.controls['cpf'].getError('minlength')" >
+                                     ( 11 caracteres )
+                                </span>
+                            </mat-error>
+                            <span style="color:rgb(255, 71, 47)"
+                            *ngIf="inputCPF.value.length > 0 && inputCPF.value.length < 11">
+                                ( Poucos caracteres, insira mais {{11 - inputCPF.value.length}} )
+                            </span>
+                            <span style="color:rgb(255, 71, 47)"
+                            *ngIf="inputCPF.value.length > 0 && inputCPF.value.length > 11">
+                                ( Muitos caracteres, tire {{(11 - inputCPF.value.length) * -1}} caracteres )
+                            </span>
+                        </mat-form-field>
+                    </div>
+                    <div class="div">
+                        <mat-form-field >
+                            <label></label>
+                            <input 
+                                type="tel"
+                                placeholder="Telefone..."
+                                matInput
+                                [formControl]="telefone"
+                                #inputTelefone
+                            >
+                            <mat-error>
+                                <span *ngIf="usuarioForm.controls['telefone'].getError('required')" >
+                                    ( Campo obrigatório )
+                                </span>
+                                <span *ngIf="usuarioForm.controls['telefone'].getError('minlength')" >
+                                     ( 11 caracteres )
+                                </span>
+                            </mat-error>
+                            <span style="color:rgb(255, 71, 47)"
+                            *ngIf="inputTelefone.value.length > 0 && inputTelefone.value.length < 11">
+                                ( Poucos caracteres, insira mais {{11 - inputTelefone.value.length}} )
+                            </span>
+                            <span style="color:rgb(255, 71, 47)"
+                            *ngIf="inputTelefone.value.length > 0 && inputTelefone.value.length > 11">
+                                ( Muitos caracteres, tire {{(11 - inputTelefone.value.length) * -1}} caracteres )
+                            </span>
+                            <span style="color:rgb(255, 71, 47)"
+                            *ngIf="inputTelefone.value.length > 0 && inputTelefone.value.length < 8">
+                                ( Poucos caracteres, insira mais {{8 - inputTelefone.value.length}} )
+                        </span>
+                        </mat-form-field>
+                    </div>
+                    <div class="div">
+                        <mat-form-field >
+                            <label></label>
+                            <input 
+                                type="text"
+                                placeholder="Endereço..."
+                                matInput
+                                [formControl]="endereco"
+                            >
+                            <mat-error>
+                                <span *ngIf="usuarioForm.controls['endereco'].getError('required')" >
+                                    ( Campo obrigatório )
+                                </span>
+                                
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field >
+                            <label></label>
+                            <input 
+                                type="text"
+                                placeholder="Complemento..."
+                                matInput
+                                [formControl]="complemento"
+                            >
+                            <mat-error>
+                                <span *ngIf="usuarioForm.controls['complemento'].getError('required')" >
+                                    ( Campo obrigatório )
+                                </span>
+                                
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="div">
+                        <mat-form-field >
+                            <label></label>
+                            <input 
+                                type="password"
+                                placeholder="Digite sua senha..."
+                                matInput
+                                [formControl]="pass1"
+                                #inputpass1
+                                
+                            >
+                            <mat-error>
+                                <span *ngIf="usuarioForm.controls['pass1'].getError('required')" >
+                                    ( Campo obrigatório )
+                                </span>
+                                <span *ngIf="usuarioForm.controls['pass1'].getError('minlength')" >
+                                     ( 08 caracteres )
+                                </span>
+                            </mat-error>
+                            <span style="color:greenyellow"
+                                *ngIf="inputpass2.value == inputpass1.value && inputpass2.value.length > 0" >
+                                ( Senhas Idênticas! )
+                            </span>
+                            <span style="color:rgb(255, 71, 47)"
+                                *ngIf="inputpass1.value.length > 0 && inputpass1.value.length < 8">
+                                ( Poucos caracteres, insira mais {{8 - inputpass1.value.length}} )
+                            </span>
+                        
+                        </mat-form-field>
+                        <mat-form-field >
+                            <label></label>
+                            <input 
+                                type="password"
+                                placeholder="Confirme sua senha..."
+                                matInput
+                                [formControl]="pass2"
+                                #inputpass2
+                                value="inputpass2.value"
+                            >
+                            <mat-error>
+                                <span *ngIf="usuarioForm.controls['pass2'].getError('required')" >
+                                    ( Campo obrigatório )
+                                </span>
+                                <span *ngIf="usuarioForm.controls['pass2'].getError('minlength')" >
+                                     ( 08 caracteres )
+                                </span>
+                                
+                            </mat-error>
+                            <span style="color:rgb(255, 64, 47)"
+                            *ngIf="inputpass2.value != inputpass1.value && inputpass2.value.length > 7" >
+                                ( Senhas Direfentes! )
+                            </span>
+                            <span style="color:greenyellow"
+                                *ngIf="inputpass2.value == inputpass1.value && inputpass2.value.length > 0" >
+                                ( Senhas Idênticas! )
+                            </span>
+                            <span style="color:rgb(255, 71, 47)"
+                                *ngIf="inputpass2.value.length > 0 && inputpass2.value.length < 8">
+                                ( Poucos caracteres, insira mais {{8 - inputpass2.value.length}} )
+                            </span>
+                        </mat-form-field>
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <button 
+                        type="submit"
+                        (click)="addDialog()"
+                    >
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
